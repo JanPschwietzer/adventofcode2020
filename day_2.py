@@ -1,12 +1,15 @@
-#
-# Wie viele passworter sind gültig
-#
+# On day 2 we have to check how many passwords in the database are correct. We have a min. and a max. amount the password is allowed in our password.
+# The second challenge tells us that the passwords are only correct if the letter at the position of the (password + min amount) or (password + max amount)
+# is the letter we were counting in the first task. example password: abccd | min: 1 | max: 3 | letter: c
+# "c" had to be at least 1 times and max 3 times in the pass, check.
+# "c" had to be on the first position OR(very important!) the third position of the password, check.
+# so the password would be correct.
 
-##### DEFINITIONEN #####
+##### definitions #####
 
-check_min = []
-check_max = []
-letter = []
+check_min = [] # the lowest the letter is allowed in the password
+check_max = [] # the highest the letter is allowed in the password
+letter = [] # the letter we are searching for
 
 # open the file "list".
 file = open("list", "r")
