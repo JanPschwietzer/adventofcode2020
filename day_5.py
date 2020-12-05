@@ -54,7 +54,6 @@ def row_checker():
     row_check = Counter(rows)
     for key in row_check.keys():
         if row_check[key] == 7:
-            print("Row: {} has {} seats.".format(key, row_check[key]))
             result = key
     return result
 
@@ -67,25 +66,18 @@ def seat_checker(eigb):
         print(0)
         return 0
     if 1 not in result:
-        print(1)
         return 1
     if 2 not in result:
-        print(2)
         return 2
     if 3 not in result:
-        print(3)
         return 3
     if 4 not in result:
-        print(4)
         return 4
     if 5 not in result:
-        print(5)
         return 5
     if 6 not in result:
-        print(6)
         return 6
     if 7 not in result:
-        print(7)
         return 7
     
 
@@ -95,5 +87,5 @@ def calc():
 
 
 if __name__ == "__main__":
-    print(sort())
-    print(calc())
+    print("Star 1: ", sort())
+    print("Star 2: ", calc())
