@@ -1,0 +1,55 @@
+file = open("list", "r")
+text = file.read().split("\n")
+
+
+def funcs():
+    number = 0
+    result = 0
+    loop = 0
+    i = 0
+    list = []
+
+    while loop == 0:
+        list.append(i) # Append line to list to check if its looping!
+        
+        # check if list is looping
+        #
+        if list.count(i) == 2:
+            loop = 1
+
+        # extract the number
+        #
+        length = ((text[i]).join(text[i])).count(text[i]) - 4
+        if length == 3:
+            number = text[i][5] + text[i][6] + text[i][7]
+        elif length == 2:
+            number = text[i][5] + text[i][6]
+        elif length == 1:
+            number = text[i][5]
+        number = int(number)
+
+        # jumping function
+        #
+        if text[i][0] == "j":
+            if text[i][4] == "+":
+                i += number
+                continue
+            elif text[i][4] == "-":
+                i -= number
+                continue
+
+        # add or substract the acc value
+        #
+        if text[i][0] == "a":
+            if text[i][4] == "+":
+                result += number
+            if text[i][4] == "-":
+                result -= number
+        i += 1
+
+    return result
+
+
+if __name__ == "__main__":
+    print("Star 1: ", funcs())
+    
